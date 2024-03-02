@@ -1,28 +1,69 @@
 #include<iostream>
-#include<algorithm>
 using namespace std;
 
-
-void insertatbeginning(int *arr, int n ,int element );
-
-
-void insertatend();
-int main()
+void insertatbeg(int arr[] , int size , int element)
 {
-    int arr[30];
-    int n = 5;
 
-    for(i=n-1; i>=0 ; i--)
+    for(int i = size-1 ; i>=0 ; i--)
     {
-        arr[i+1]=a[i];
-
+        arr[i+1] = arr[i];
 
     }
 
-    int a[0]=new_value;
-    
-    for(i=0;i<n=1;i++)
+    size+=1;
+    arr[0] = element;
+    for(int i=0 ; i<size;i++)
     {
-
+        cout<<arr[i]<<" ,";
     }
 }
+
+
+void insertatindex(int arr[] , int size , int pos , int element)
+{
+    for(int i=size-1;i>=pos;i--)
+    {
+        arr[i+1] = arr[i];
+
+    }
+    
+    size+=1;
+    arr[pos]=element;
+    for(int i = 0; i<size ; i++)
+    {
+        cout<<arr[i]<<" ,";
+    }
+}
+
+void deletion(int arr[] , int size , int pos )
+{
+    for(int i=size-1;i>=pos;i--)
+    {
+        arr[i]=arr[i+1];
+    }
+    size+=1;
+    
+
+}
+
+int main()
+{
+    int arr[10];
+    int n;
+    cout<<"Enter th number of elements you want in an array( size of array): ";
+    cin>>n;
+    cout<<"Enter the elements of the array: ";
+    
+    for(int i =0; i<n ; i++)
+    {
+        cin>>arr[i];
+
+    }
+
+    // insertatbeg(arr,n,26);
+    insertatindex(arr , n , 4 , 78);
+
+    return 0;
+
+}
+   
